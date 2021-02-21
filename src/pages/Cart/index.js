@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import {useHistory} from "react-router-dom";
-import axios from 'axios';
+import axios from 'axios'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';

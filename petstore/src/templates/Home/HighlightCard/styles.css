@@ -1,0 +1,69 @@
+.highlights__card{
+    width: 100%;
+    height: 310px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.highlights__card:hover{
+    filter: brightness(95%);
+}
+
+a{
+    text-decoration: none;
+}
+
+.highlights__card__image{
+    background: #878787;
+    height: 220px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.highlights__card__image-discount{
+    padding: 5px;
+    background: rgba(43, 43, 43, 0.782);
+    color: white;
+    width: max-content;
+    border-radius: 4px;
+}
+
+.highlights__card__description{
+    height: 90px;
+    box-sizing: border-box;
+    display: flex;
+    padding: 11px;
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+    border-radius: 0px 0px 8px 8px;
+    justify-content: space-between;
+}
+
+.highlights__card__description-name p{
+    font-weight: 600;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0px;
+    text-overflow: ellipsis;
+    color: var(--grey-darker);
+}
+
+.highlights__card__description-price{
+    font-weight: 600;
+    font-size: 20px;
+    color: #962398;
+}
+
+.highlights__card__description-big-price{
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #962398;
+}
+
+.highlights__card__description-discount{
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(43, 43, 43, 0.782);
+}

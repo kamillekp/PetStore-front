@@ -1,0 +1,17 @@
+
+.footer{
+    text-align: center;
+    margin-top: 90px;
+}
+
+p .classic-link{
+  color: #962398;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.classic-link:visited{
+  color: #962398;
+  font-weight: 600;
+  cursor: pointer;
+}

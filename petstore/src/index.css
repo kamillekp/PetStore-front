@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  margin: 0px 60px;
+  font-family: 'Montserrat', sans-serif;
+  color: #6b6b6b;
+}
+
+input, button{
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --grey-lighter: #dfdfdf;
+  --grey-light: #bfbfbf;
+  --grey: #969696;
+  --grey-dark: #6d6d6d;
+  --grey-darker: #3f3f3f;
+}
+
+h3{
+  margin: 40px 0px;
+  color: #962398;
+}
+
+.classic-link{
+  color: #962398;
+  font-weight: 600;
+  cursor: pointer;
+}
+.classic-link:visited{
+  color: #962398;
+  font-weight: 600;
+  cursor: pointer;
+}
+.highlighted-link{
+  color: #6b6b6b;
+  font-size: 12px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.highlighted-link:hover{
+  margin-left: 2px;
+}
+
+.purple{
+  background-color: #962398;
+  color: white;
+  padding: 10px;
+  outline: none;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.purple:hover,
+.grey:hover{
+  filter: brightness(90%);
+}
+
+.grey{
+  background-color: var(--grey-light);
+  color: white;
+  padding: 10px;
+  outline: none;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.purple + .grey{
+  margin: 0px;
+}

@@ -22,7 +22,6 @@ export default function Home() {
   useEffect(()=>{
     async function fetchDiscountProducts(){
       const response = await api.get('products/highlights/list');
-      //const response = await axios.get("https://petstore-back.herokuapp.com/products/highlights/list")
       setDiscountProd(response.data);
     }
     fetchDiscountProducts();

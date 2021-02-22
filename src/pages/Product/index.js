@@ -83,8 +83,7 @@ export default function Product() {
 	
 	function verificaLogin() {
 		if(token) {
-            handleCart()
-			history.push('/cart');
+            handleCart().then(history.push('/cart'));
 		}
 		else {
 			history.push('/login');

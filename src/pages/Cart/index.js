@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import {useHistory} from "react-router-dom";
-import axios from 'axios'
+import api from '../../services/api'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';
@@ -53,7 +53,7 @@ export default function Cart() {
     })
 
     async function getProductPrice(id){        
-        const response  = await axios.get(`http://localhost:3333/products/${id}`);
+        const response  = await api.get(`products/${id}`);
         const product = response.data;
         if(product.discount != null){
             return (product.price - product.price * (product.discount/100))
@@ -63,7 +63,7 @@ export default function Cart() {
     }
 
     async function getInitialProductPrice(id){        
-        const response  = await axios.get(`http://localhost:3333/products/${id}`);
+        const response  = await api.get(`products/${id}`);
         const product = response.data;
         return product.price;
     }
@@ -72,14 +72,14 @@ export default function Cart() {
     async function handleSendCart(){
         if(token){
             if(cart){
-                const response  = await axios.get(`http://localhost:3333/user/${userId}`);
+                const response  = await api.get(`user/${userId}`);
                 const user = response.data[0];
                 const data = {
                     name: user.name,
                     email: user.email,
                     total: price
                 }
-                await axios.post('http://localhost:3333/cart/', data);
+                await api.post('/cart/', data);
                 alert("Oba! verifique seu e-mail para acessar mais detalhes da compra")
                 localStorage.removeItem('cart');
                 setProducts()

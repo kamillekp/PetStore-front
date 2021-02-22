@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+import api from '../../../services/api'
 
 export default function Product({product, setProducts, counter, setCounter}) {
   const [prod, setProd] = useState([]);
@@ -13,7 +13,7 @@ export default function Product({product, setProducts, counter, setCounter}) {
   useEffect(()=>{
     async function fetchProduct(){
       console.log(id)
-      const response = await axios.get(`http://localhost:3333/products/${id}`);
+      const response = await api.get(`products/${id}`);
       setProd(response.data);
       setCont(product.cont)
     }

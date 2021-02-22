@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom'
-import axios from 'axios'
+import api from '../../services/api'
 import './styles.css'
 
 //COMPONENTES PADRÃO
@@ -18,7 +18,7 @@ export default function Products() {
     const [search, setSearch] = useState(string);
     useEffect(()=>{
         async function fetchProducts(){
-          const response = await axios.get(`http://localhost:3333/products`);
+          const response = await api.get(`/products`);
           let filtered = response.data.filter(function (e) {
             return (e.name).toLowerCase().includes(search.toLowerCase());
           });

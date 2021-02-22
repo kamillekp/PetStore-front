@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './styles.css';
 import {Link, useHistory} from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';
@@ -21,7 +21,7 @@ export default function Login() {
           password
         } 
 
-        const response = await axios.post('http://localhost:3333/session', data);
+        const response = await api.post('/session', data);
         localStorage.setItem('Token', response.data.token);
         localStorage.setItem('UserId', response.data.id);
         history.push('/');

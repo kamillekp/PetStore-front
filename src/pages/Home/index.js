@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import {useHistory} from 'react-router-dom'
-import axios from 'axios';
+import api from '../../services/api'
+import axios from 'axios'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';
@@ -20,7 +21,8 @@ export default function Home() {
 
   useEffect(()=>{
     async function fetchDiscountProducts(){
-      const response = await axios.get('http://localhost:3333/products/highlights/list');
+      const response = await api.get('products/highlights/list');
+      //const response = await axios.get("https://petstore-back.herokuapp.com/products/highlights/list")
       setDiscountProd(response.data);
     }
     fetchDiscountProducts();

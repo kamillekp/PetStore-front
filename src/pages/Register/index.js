@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './styles.css';
 import {Link, useHistory} from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';
@@ -35,7 +35,7 @@ export default function Register() {
           email,
           password
         } 
-        await axios.post('http://localhost:3333/user', data);
+        await api.post('user', data);
         history.push('login')
       }
       catch (err) {

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css'
 import { useParams, useHistory} from "react-router-dom";
-import axios from 'axios'
+import api from '../../services/api'
 
 //COMPONENTES PADRÃO
 import Nav from '../../templates/block/Nav';
@@ -21,7 +21,7 @@ export default function Product() {
     useEffect(() => {
         async function fetchData() {
             try{
-                const prod = await axios.get(`http://localhost:3333/products/${id}`);
+                const prod = await api.get(`products/${id}`);
                 setProduct(prod.data);
             }catch(err){
                 alert(err);

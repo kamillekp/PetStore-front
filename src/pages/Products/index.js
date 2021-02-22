@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom'
-import axios from 'axios'
+import api from '../../services/api'
 import './styles.css'
 
 //COMPONENTES PADRÃO
@@ -18,7 +18,7 @@ export default function Products() {
 
     useEffect(()=>{
         async function fetchProducts(){
-          const response = await axios.get(`http://localhost:3333/products/category/${category}`);
+          const response = await api.get(`products/category/${category}`);
           setProducts(response.data);
         }
         fetchProducts();
